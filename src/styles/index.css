@@ -25,7 +25,18 @@ time, mark, audio, video {
 }
 
 body {
-background-image: url("../img/bg.jpg");
+	background: url("../img/bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#tsparticles {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

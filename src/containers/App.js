@@ -1,33 +1,88 @@
 import React from 'react';
 import '../styles/App.css';
-import Particles from 'react-particles-js';
-import bp from '../img/bg.jpg'
+import Particles from 'react-tsparticles';
 
 
 function App() {
   return (
-    <div className="App" style={{ backgroundImage: `url(${bp})`}} >
-      <h1>test</h1>
+    <div className="App">
       <Particles
-        params={{
+        id="tsparticles"
+        options={{
+          fpsLimit: 60,
+          interactivity: {
+            detectsOn: "canvas",
+            events: {
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              bubble: {
+                distance: 400,
+                duration: 2,
+                opacity: 0.8,
+                size: 40,
+              },
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 100,
+                duration: 0.4,
+              },
+            },
+          },
           particles: {
-            // color: {
-            //   value: "#000000"
-            // },
-            // line_linked: {
-            //   color: {
-            //     value: "#000000"
-            //   }
-            // },
+            color: {
+              value: "#ffffff",
+            },
+            links: {
+              color: "#ffffff",
+              distance: 175,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+            },
+            collisions: {
+              enable: true,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outMode: "bounce",
+              random: false,
+              speed: 2,
+              straight: false,
+            },
             number: {
-              value: 50
+              density: {
+                enable: true,
+                value_area: 1000, //Bigger area = more sparse
+              },
+              value: 100,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: "circle",
             },
             size: {
-              value: 3
-            }
-          }
+              random: true,
+              value: 8,
+            },
+          },
+          detectRetina: true,
         }}
       />
+      <h1>test</h1>
 
       <h1>hi</h1>
     </div>
