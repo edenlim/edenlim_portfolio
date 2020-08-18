@@ -1,6 +1,12 @@
 import React from 'react';
-import '../styles/App.css';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
 import Particles from 'react-tsparticles';
+import styled from 'styled-components';
+import '../styles/App.css';
+import Modal from '../components/Modal'
 
 
 function App() {
@@ -45,10 +51,10 @@ function App() {
             },
             links: {
               color: "#ffffff",
-              distance: 175,
+              distance: 150,
               enable: true,
-              opacity: 0.5,
-              width: 1,
+              opacity: 0.3,
+              width: 0.5,
             },
             collisions: {
               enable: true,
@@ -82,11 +88,24 @@ function App() {
           detectRetina: true,
         }}
       />
-      <h1>test</h1>
-
-      <h1>hi</h1>
+      <Switch>
+        <AppContainer>
+          <Route
+            exact
+            path="/"
+            render={props => <Modal {...props} />}
+          />
+        </AppContainer>
+      </Switch>
     </div>
   );
 }
 
 export default App;
+
+const AppContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`
