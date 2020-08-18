@@ -64,7 +64,7 @@ function App() {
             number: {
               density: {
                 enable: true,
-                value_area: 1000, //Bigger area = more sparse
+                value_area: 2000, //Bigger area = more sparse
               },
               value: 100,
             },
@@ -76,7 +76,7 @@ function App() {
             },
             size: {
               random: true,
-              value: 8,
+              value: 6,
             },
           },
           detectRetina: true,
