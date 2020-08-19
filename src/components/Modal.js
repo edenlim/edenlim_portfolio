@@ -5,7 +5,10 @@ import * as icon from '@fortawesome/free-solid-svg-icons'
 import '../styles/modal.css'
 
 class Modal extends Component {
+
   render(){
+    const { modalClicked } = this.props
+    console.log(this.props)
     return(
       <ModalContainer>
         <header id="header">
@@ -14,16 +17,16 @@ class Modal extends Component {
           </LogoDiv>
           <div className="content">
             <div className="inner">
-              <p>Part-time coder, Full-time dreamer</p>
+              <p>Part-time coder</p><p> Full-time dreamer</p>
             </div>
           </div>
           <nav>
             <ul>
-              <li><LinkText href="about">About</LinkText></li>
-              <li><LinkText href="work">Work</LinkText></li>
-              <li><LinkText href="goals">Goals</LinkText></li>
-              <li><LinkText href="interests">interests</LinkText></li>
-              <li><LinkText href="contact">Contact</LinkText></li>
+              <li><p onClick={() => modalClicked('About')}><LinkText> About</LinkText></p></li>
+              <li><p><LinkText>Work</LinkText></p></li>
+              <li><p><LinkText>Goals</LinkText></p></li>
+              <li><p><LinkText>interests</LinkText></p></li>
+              <li><p><LinkText>Contact</LinkText></p></li>
 							</ul>
           </nav>
         </header>
@@ -41,6 +44,7 @@ const ModalContainer = styled.div`
 
 const LinkText = styled.a`
   color: white;
+  cursor: pointer;
   text-decoration: none;
 `
 

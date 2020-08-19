@@ -6,7 +6,7 @@ import {
 import Particles from 'react-tsparticles';
 import styled from 'styled-components';
 import '../styles/App.css';
-import Modal from '../components/Modal'
+import Home from './Home'
 
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
             },
             links: {
               color: "#ffffff",
-              distance: 150,
+              distance: 225,
               enable: true,
               opacity: 0.3,
               width: 0.5,
@@ -93,7 +93,7 @@ function App() {
           <Route
             exact
             path="/"
-            render={props => <Modal {...props} />}
+            render={props => <Home {...props} />}
           />
         </AppContainer>
       </Switch>
