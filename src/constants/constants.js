@@ -1,7 +1,9 @@
 const constants = {
-  about: [
-    'Coding journey'
-  ]
+  about: {
+    'About me': 'hello',
+    'Testing': 'hello',
+    'Wahhhh' : 'hello'
+  }
 }
 
 export default constants

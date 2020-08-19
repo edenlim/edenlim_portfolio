@@ -22,12 +22,12 @@ class Modal extends Component {
           </div>
           <nav>
             <ul>
-              <li><p onClick={() => modalClicked('About')}><LinkText> About</LinkText></p></li>
+              <li><p onClick={() => modalClicked('about')}><LinkText> About</LinkText></p></li>
               <li><p><LinkText>Work</LinkText></p></li>
               <li><p><LinkText>Goals</LinkText></p></li>
               <li><p><LinkText>interests</LinkText></p></li>
               <li><p><LinkText>Contact</LinkText></p></li>
-							</ul>
+            </ul>
           </nav>
         </header>
       </ModalContainer>

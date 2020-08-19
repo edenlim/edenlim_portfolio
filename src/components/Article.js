@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as icon from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components';
 import '../styles/modal.css'
+import constants from '../constants/constants'
 
 
 class Article extends Component {
@@ -20,9 +21,9 @@ class Article extends Component {
           <Title>{topic}</Title>
           <ArticleNav>
             <ArticleUl>
-              <ArticleLi>Coding Journey</ArticleLi>
-              <ArticleLi>Hello</ArticleLi>
-              <ArticleLi>Wah</ArticleLi>
+              {Object.keys(constants[topic]).length > 1 && Object.keys(constants[topic]).map(e => {
+                return (<ArticleLi>{e}</ArticleLi>)
+              })}
             </ArticleUl>
           </ArticleNav>
         </Body>
