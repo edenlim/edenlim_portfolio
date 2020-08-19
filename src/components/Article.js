@@ -4,12 +4,26 @@ import * as icon from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components';
 import '../styles/modal.css'
 import constants from '../constants/constants'
+import ArticleBody from './ArticleBody'
 
 
 class Article extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      article: null
+    }
+    this.selectArticle = this.selectArticle.bind(this)
+  }
+
+  selectArticle(article){
+    this.setState({article})
+  }
+
   render(){
-    const { exitArticle, topic} = this.props
-    console.log(icon)
+    const { article } = this.state
+    const { exitArticle, topic } = this.props
+    console.log(article)
     return(
       <ArticleDiv >
         <div>
@@ -21,11 +35,15 @@ class Article extends Component {
           <Title>{topic}</Title>
           <ArticleNav>
             <ArticleUl>
-              {Object.keys(constants[topic]).length > 1 && Object.keys(constants[topic]).map(e => {
-                return (<ArticleLi>{e}</ArticleLi>)
+              {Object.keys(constants[topic]).length > 1 && Object.keys(constants[topic]).map(articleKey => {
+                return (<ArticleLi onClick={() => this.selectArticle(articleKey)} key={articleKey}>{articleKey}</ArticleLi>)
               })}
             </ArticleUl>
           </ArticleNav>
+          <ArticleBody
+            article={article}
+            topic={topic}
+          />
         </Body>
       </ArticleDiv>
     )
