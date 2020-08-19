@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Modal from '../components/Modal.js'
 import Article from '../components/Article.js'
 
@@ -30,7 +29,6 @@ class Home extends Component {
 
   render() {
     const { view, topic } = this.state
-    console.log(this.state.view)
     return (
       <div>
         {view==='modal' && <Modal
@@ -46,20 +44,3 @@ class Home extends Component {
 }
 
 export default Home
-
-const ModalContainer = styled.div`
-  color: white;
-  text-decoration: none;
-`
-
-const LinkText = styled.a`
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-`
-
-const LogoDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`

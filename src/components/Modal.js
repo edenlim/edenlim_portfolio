@@ -5,10 +5,8 @@ import * as icon from '@fortawesome/free-solid-svg-icons'
 import '../styles/modal.css'
 
 class Modal extends Component {
-
   render(){
     const { modalClicked } = this.props
-    console.log(this.props)
     return(
       <ModalContainer>
         <header id="header">
@@ -16,7 +14,7 @@ class Modal extends Component {
             <FontAwesomeIcon icon={icon.faCircleNotch} color="white" size='2x'/>
           </LogoDiv>
           <div className="content">
-            <div className="inner">
+            <div className="inner" id='inner'>
               <p>Part-time coder</p><p> Full-time dreamer</p>
             </div>
           </div>

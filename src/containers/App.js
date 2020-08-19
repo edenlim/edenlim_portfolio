@@ -12,7 +12,6 @@ import Home from './Home'
 class App extends Component {
 
   componentDidMount(){
-    console.log('yppp')
     setTimeout(function(){
       document.getElementById('overlay').remove()
     },1000)

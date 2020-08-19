@@ -79,24 +79,39 @@ const Title = styled.h1`
 `
 
 const ArticleNav = styled.nav`
-  border: 1px solid white;
-  width: 80%;
   margin: 0 auto;
   color: #ffffff;
+  border: 1px solid white;
+  display: inline-flex;
+  border-radius: 4px;
 `
 const ArticleUl = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-
 `
 
 const ArticleLi = styled.li`
-  :first-child {
-    background-color: red;
+  cursor: pointer;
+  display: block;
+  min-width: 7.5rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  padding: 0 1.25rem 0 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  border-bottom: 0;
+  border-right: 0;
+  border-left: solid 1px white;
+
+
+  :hover {
+    background-color: rgba(255, 255, 255, 0.411);
   }
-  :last-child {
-    background-color: blue;
+
+  :first-child {
+    border-left: 0;
   }
 `
