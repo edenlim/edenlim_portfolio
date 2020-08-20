@@ -1,0 +1,10 @@
+.danger a {
+  color: #d5d5d5;
+  border-bottom: 1px dotted #d5d5d5;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.danger a:hover{
+  color: rgb(55, 113, 248);
+}
