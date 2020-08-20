@@ -2,23 +2,33 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as icon from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components';
-import '../styles/modal.css'
+import '../styles/articleBody.css'
 import constants from '../constants/constants'
 
 
 class ArticleBody extends Component {
+  constructor(props) {
+    super(props)
+    this.createMarkup = this.createMarkup.bind(this)
+  }
+
+  createMarkup(content){
+    return {__html: content}
+  }
+
   render() {
     // Topic: article: [{}]
-    const { article, topic } = this.props
+    const { article, topic, renderDefault } = this.props
     console.log('hello: ',constants[topic][article])
     return (
       <ArticleContainer>
+        {!article && renderDefault && <div>Yolo</div>}
         {article && constants[topic][article].map((constant) => {
           switch(constant.style){
             case 'title':
               return (<Title>{constant.content}</Title>)
             case 'text':
-              return (<Text>{constant.content}</Text>)
+              return (<Text align={constant.align}>{constant.content}</Text>)
             case 'image':
               return (
                 <div>
@@ -34,8 +44,10 @@ class ArticleBody extends Component {
                   })}
                 </UnorderedList>
               )
+            case 'dangerous':
+              return (<div className='danger' dangerouslySetInnerHTML={this.createMarkup(constant.content)}/>)
             default:
-              return ''
+              return (<div className='danger' dangerouslySetInnerHTML={this.createMarkup(constant.content)}/>)
           }
         })}
       </ArticleContainer>
@@ -65,7 +77,7 @@ const Text = styled.p`
   margin: 1rem;
   letter-spacing: -1px;
   font-weight: lighter;
-  text-align: left;
+  text-align: ${ props => props.align ? props.align : 'left'};
   font-size: 1.15rem;
 `
 

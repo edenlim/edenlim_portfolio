@@ -38,6 +38,7 @@ export default Modal
 const ModalContainer = styled.div`
   color: white;
   text-decoration: none;
+  margin-top: 20vh;
 `
 
 const LinkText = styled.a`

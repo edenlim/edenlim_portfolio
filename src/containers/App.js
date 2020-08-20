@@ -117,11 +117,11 @@ const AppContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  // height: 100%;
 `
 
 const Overlay = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   z-index: 1;

@@ -23,7 +23,9 @@ class Article extends Component {
   render(){
     const { article } = this.state
     const { exitArticle, topic } = this.props
-    console.log(article)
+    const articleKeys = Object.keys(constants[topic])
+    const renderDefault = articleKeys.length !== 1
+    console.log(articleKeys)
     return(
       <ArticleDiv >
         <div>
@@ -33,16 +35,17 @@ class Article extends Component {
         </div>
         <Body>
           <Title>{topic}</Title>
-          <ArticleNav>
+          {renderDefault && <ArticleNav>
             <ArticleUl>
-              {Object.keys(constants[topic]).length > 1 && Object.keys(constants[topic]).map(articleKey => {
+              {articleKeys.length > 1 && articleKeys.map(articleKey => {
                 return (<ArticleLi onClick={() => this.selectArticle(articleKey)} key={articleKey}>{articleKey}</ArticleLi>)
               })}
             </ArticleUl>
-          </ArticleNav>
+          </ArticleNav>}
           <ArticleBody
             article={article}
             topic={topic}
+            renderDefault={renderDefault}
           />
         </Body>
       </ArticleDiv>
@@ -54,9 +57,11 @@ export default Article
 
 const ArticleDiv = styled.div`
   width: 80vw;
+  max-width: 640px;
   padding: 5vh 5vw;
   background-color: rgba(0,0,0,0.5);
   border-radius: 5px;
+  margin: 10vh 0;
 `
 
 const CloseArticleCircle = styled.div`
@@ -93,7 +98,7 @@ const Title = styled.h1`
   width: -ms-max-content;
   width: max-content;
   padding-bottom: 0.5rem;
-  margin: 0 0 2rem 0;
+  margin: 0 auto 2rem;
 `
 
 const ArticleNav = styled.nav`
@@ -102,13 +107,20 @@ const ArticleNav = styled.nav`
   border: 1px solid white;
   display: inline-flex;
   border-radius: 4px;
+  max-width: 80%;
+  overflow: hidden;
+
 `
 const ArticleUl = styled.ul`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-
-`
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+       display: none;
+    }
+ `
 
 const ArticleLi = styled.li`
   cursor: pointer;
