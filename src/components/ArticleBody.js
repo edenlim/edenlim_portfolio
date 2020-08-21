@@ -28,7 +28,7 @@ class ArticleBody extends Component {
           <Default>{constants[topic].default}</Default>
         )}
         {article && articleComponent.map((constant) => {
-          switch(constant.style){
+          switch(constant.style.toLowerCase()){
             case 'title':
               return (<Title>{constant.content}</Title>)
             case 'text':

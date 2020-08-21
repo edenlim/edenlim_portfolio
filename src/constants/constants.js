@@ -1,7 +1,11 @@
 import logo from '../img/bg.jpg'
 import eden from '../img/eden.jpg'
 import interest from '../img/interests.jpg'
-import bptmc1 from '../img/bptmc1.jpeg'
+import bptmc1 from '../img/bptmc1.jpg'
+import startup1 from '../img/startup1.jpg'
+import startup2 from '../img/startup2.jpg'
+import tmc1 from '../img/tmc1.jpg'
+
 // title for h1
 // text for p
 // image for img
@@ -77,7 +81,7 @@ const constants = {
         ],
         style: 'ul-list'
       }],
-      'Organization' : [{
+      'Toastmaster' : [{
         content: 'Toastmasters',
         style: 'title'
       },{
@@ -85,6 +89,48 @@ const constants = {
         style: 'image',
         alt: 'Giving a speech in a Toastmasters meeting',
         layout: 'horizontal'
+      },{
+        content: 'There\'s a saying in chinese: "You can eat anything you want, but you can\'t say what you want."',
+        style: 'text'
+      },{
+        content: 'And in English there is: "The pen is mightier than the sword"',
+        style: 'text'
+      },{
+        content: 'The most charismatic people in the world are the ones who can sway people with words. Think of politicians like Barack Obama. Martin Luther King. Think of entrepreneurs like Steve Jobs and Jack Ma. Think of comedians and Late night show hosts like Trevor Noah and John Oliver. Speaking is a skill when used properly, could make a big impact.',
+        style: 'text'
+      },{
+        content: 'My toastmasters journey started because of a burning desire to master the elements of speaking, and to over come my stage fright. As an introvert, I often fantasize about being able to captivate my audience with words alone. I could charm my audiences with jokes. I could bring tears to the fair folks with empathetical stories. I could arouse and inspire the hall with strong, powerful speeches.',
+        style: 'text'
+      },{
+        content: tmc1,
+        style: 'image',
+        alt: 'Winning table topics',
+        layout: 'horizontal',
+        caption: 'My mentor and a very young me'
+      },{
+        content: 'Similar to young adults my age, I very soon found myself going around the entire of my country, visiting clubs after clubs. But my clubs are different. They were toastmasters clubs. I was notoriously voted the speaker in many chapter meetings, especially the best table topic speaker. But I wasn\'t stopping there. I also volunteered my services in different roles they had to offer.',
+        style: 'text'
+      },{
+        content: 'It was also during this time where I began to mentor junior speakers and finally, after two years of joining Toastmasters, my final contribution to the organization was to help promote the sales of ticket for the attendance of District 80 Annual Toastmasters Conference. Together with a small organization team, we help sold over a thousand ticket across Singapore',
+        style: 'text'
+      },{
+        content: 'After being a part of the committee member which broke the record of number of tickets sold for the annual conference, I retired my membership as I wanted to focus on my finals for my diploma. After graduation, I was quickly enlisted and since then, I was not involved in anymore toastmasters activity.',
+        style: 'text'
+      },{
+        content: 'Public speaking is an essential skillset',
+        style: 'title'
+      },{
+        content: startup1,
+        style: 'image',
+        alt: 'Startup Weekend Singapore 1',
+        layout: 'horizontal',
+        caption: 'The worst speech in my life and I cracked a joke.'
+      },{
+        content: 'But who would\'ve guessed that even after leaving the Toastmasters Organization, my public speaking skills would come in handy? During my first Hackathon run, my team was pitching our mockup idea to a panel of judges. Unfortunately, when it came to my turn, there was a technical difficulty, causing a minute of very awkward silence. The cameras were pointing at me- all eyes in the room was on me. So I did what came instinctively to me.',
+        style: 'text'
+      },{
+        content: 'I cracked a joke.',
+        style: 'text'
       }],
       'Testinga': 'hello',
       'Wahhhha': 'hello',
