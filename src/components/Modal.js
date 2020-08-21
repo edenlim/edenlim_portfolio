@@ -21,7 +21,7 @@ class Modal extends Component {
           <nav>
             <ul>
               <li><p onClick={() => modalClicked('about')}><LinkText> About</LinkText></p></li>
-              <li><p onClick={() => modalClicked('work')}><LinkText>Work</LinkText></p></li>
+              <li><p onClick={() => modalClicked('code')}><LinkText>Code</LinkText></p></li>
               <li><p onClick={() => modalClicked('goals')}><LinkText>Goals</LinkText></p></li>
               <li><p onClick={() => modalClicked('interests')}><LinkText>interests</LinkText></p></li>
               <li><p onClick={() => modalClicked('contact')}><LinkText>Contact</LinkText></p></li>

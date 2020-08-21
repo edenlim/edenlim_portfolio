@@ -30,7 +30,7 @@ class Home extends Component {
   render() {
     const { view, topic } = this.state
     return (
-      <div>
+      <div id='Home'>
         {view==='modal' && <Modal
           modalClicked={this.modalClicked}
         />}

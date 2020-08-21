@@ -23,11 +23,12 @@ class Article extends Component {
   render(){
     const { article } = this.state
     const { exitArticle, topic } = this.props
-    const articleKeys = Object.keys(constants[topic])
+    const articleKeys = Object.keys(constants[topic].components)
     const renderDefault = articleKeys.length !== 1
+    const scrollMore = articleKeys.length > 3
     console.log(articleKeys)
     return(
-      <ArticleDiv >
+      <ArticleDiv id='ArticleDiv'>
         <div>
           <CloseArticleCircle onClick={exitArticle}>
             <FontAwesomeIcon icon={icon.faTimes} color="white" size='lg'/>
@@ -46,6 +47,7 @@ class Article extends Component {
             article={article}
             topic={topic}
             renderDefault={renderDefault}
+            scrollMore={scrollMore}
           />
         </Body>
       </ArticleDiv>
@@ -82,7 +84,6 @@ const CloseArticleCircle = styled.div`
 
 const Body = styled.div`
   margin-top: 2vh;
-  border: 1px solid white;
 `
 
 const Title = styled.h1`
@@ -125,7 +126,7 @@ const ArticleUl = styled.ul`
 const ArticleLi = styled.li`
   cursor: pointer;
   display: block;
-  min-width: 7.5rem;
+  min-width: 8rem;
   height: 2.75rem;
   line-height: 2.75rem;
   padding: 0 1.25rem 0 1.25rem;
