@@ -5,6 +5,8 @@ import bptmc1 from '../img/bptmc1.jpg'
 import startup1 from '../img/startup1.jpg'
 import startup2 from '../img/startup2.jpg'
 import tmc1 from '../img/tmc1.jpg'
+import fyp1 from '../img/fyp1.jpg'
+import fyp2 from '../img/fyp2.jpg'
 
 // title for h1
 // text for p
@@ -132,7 +134,44 @@ const constants = {
         content: 'I cracked a joke.',
         style: 'text'
       }],
-      'Testinga': 'hello',
+      'Education': [{
+        content: 'Environmental Science',
+        style: 'title'
+      },{
+        content: 'I came from the first and oldest Polytechnic in my country, Singapore polytechnic. During my three years in the school, I persued a diploma Environmental Management and Water Technology. While it is a handful to say, it essentially is a diploma in Environmental Science together with Civil Engineering',
+        style: 'text'
+      },{
+        content: 'Notable modules that I\'ve picked up in my education includes:',
+        style: 'text'
+      },{
+        content: [
+          'Excel VBA',
+          'Civil Engineering',
+          'Microbiology',
+          'Green Building and Clean Technology'
+        ],
+        style: 'ul-list'
+      },{
+        content: fyp1,
+        style: 'image',
+        alt: 'Floating mangrove',
+        layout: 'horizontal',
+        caption: 'Floating mangrove at Punggol Waterway'
+      },{
+        content: 'There are many projects, but the most important one in my education system is FYP (Final Year Project). For my FYP, I undertook a one year project from my nation\'s statutory board of development. The task of the project was to collect water samples around the floating platform and monitor the water quality over a year.',
+        style: 'text'
+      },{
+        content: fyp2,
+        style: 'image',
+        alt: 'Laboratory equipments',
+        layout: 'horizontal'
+      },{
+        content: 'Using various laboratory equipment, we have to hypothesize the reasoning behind the values (Whether there was a public activity/contruction/a rain before). After one year of monitoring, we had to present to the statutory board our finidings.',
+        style: 'title'
+      },{
+        content: 'This was a long project, but I thoroughly enjoyed every bit of it as it gave me the opportunity to contribute to my country. The waterway served as an important water route between two reservoirs in my country and is essential to the country\'s growth. We were also taksed to keep an eye out on the flora and the fauna and catalogue them, as a healthy ecosystem is a good indicator of good water quality. As an avid animal lover, there was no better task suited for me.',
+        style: 'title'
+      }],
       'Wahhhha': 'hello',
       'Testings': 'hello',
       'Wahhhhs': 'hello'
