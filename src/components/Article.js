@@ -63,7 +63,7 @@ const ArticleDiv = styled.div`
   padding: 5vh 5vw;
   background-color: rgba(0,0,0,0.5);
   border-radius: 5px;
-  margin: 10vh 0;
+  margin: 10vh auto;
 `
 
 const CloseArticleCircle = styled.div`

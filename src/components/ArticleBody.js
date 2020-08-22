@@ -20,9 +20,8 @@ class ArticleBody extends Component {
     // Topic: article: [{}]
     const { article, topic, renderDefault, scrollMore } = this.props
     const articleComponent = constants[topic].components[article]
-    console.log('hello: ',constants[topic][article])
     return (
-      <ArticleContainer>
+      <ArticleContainer id='articleContainer'>
         {scrollMore && <Default style={{fontStyle: 'italic', fontSize: '0.9rem'}}>The navigation bar on this page can be scrolled!</Default>}
         {!article && renderDefault && (
           <Default>{constants[topic].default}</Default>
@@ -44,7 +43,7 @@ class ArticleBody extends Component {
               )
             case 'ul-list':
               return (
-                <UnorderedList>
+                <UnorderedList style={{ textAlign: constant.align ? constant.align : 'left' }}>
                   {constant.content.map(li => {
                     return <li style={{margin: '10px 0'}}>{li}</li>
                   })}
