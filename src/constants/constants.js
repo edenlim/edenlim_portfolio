@@ -16,6 +16,19 @@ import hdb2 from '../img/hdb2.jpg'
 import navy1 from '../img/navy1.jpg'
 import abvfeature1 from '../img/abvfeature1.png'
 import abvfeature2 from '../img/abvfeature2.png'
+import abvfeature3 from '../img/abvfeature3.jpg'
+import abvfeature4 from '../img/abvfeature4.jpg'
+import othrwrld from '../img/othrwrld.png'
+import othrwrld1 from '../img/othrwrld1.gif'
+import othrwrld2 from '../img/othrwrld2.png'
+import othrwrld3 from '../img/othrwrld3.png'
+import unity1 from '../img/unity1.gif'
+import itsmeta from '../img/itsmeta.png'
+import itsmeta1 from '../img/itsmeta1.png'
+import itsmeta2 from '../img/itsmeta2.png'
+import scrollreview from '../img/scrollreview.gif'
+import chernobyl from '../img/chernobyl.png'
+
 
 // title for h1
 // text for p
@@ -388,7 +401,7 @@ const constants = {
   },
   code: {
     default: 'Click on one of the buttons to find out more!',
-    defaultMore: 'In this section, you will see a list of projects I am most proud of. Here are a list of technologies I had worked with in the past:',
+    defaultMore: 'In this section, you will see a list of projects I am most proud of. Here are a list of technologies and tools I had worked with in the past:',
     defaultList: [
       'Javascript ES6/',
       'HTML/CSS',
@@ -402,7 +415,9 @@ const constants = {
       'Postgres',
       'Github',
       'Postman',
-      'Robo 3T'
+      'Robo 3T',
+      'Slack',
+      'Android Studio'
     ],
     components: {
       career: [{
@@ -430,7 +445,7 @@ const constants = {
         content: 'In this feature, I was the lead engineer for the mobile version, and I worked with an intern who was working on the web version. Eventually I took over both platform when the intern left.',
         style: 'text'
       },{
-        content: 'The feature has recently been release, but has been used over 20,000 times by our users. Due to how heavily anticiapted this feature is, it was well received by our users.',
+        content: 'The feature has recently been release in mid-August 2020 for testing, and by the end of the month has been used over 20,000 times by our users. Due to how heavily anticiapted this feature is, it was well received by our users.',
         style: 'text'
       },{
         content: 'This feature has solidified my understanding of making mongo queries, something that I did not work with prior to the project. On the desgin aspect, I worked closely with the design team to meet their requirement.',
@@ -459,10 +474,234 @@ const constants = {
         style: 'ul-list',
         align: 'center'
       },{
+      style: 'break'
+      },{
+        content: 'Collections',
+        style: 'title'
+      },{
+        content: abvfeature3,
+        style: 'image',
+        layout: 'vertical',
+        alt: 'Editing collections',
+        caption: 'Editing collections'
+      },{
+        content: 'Another feature that was highly requested was the ability to save reviews to collections. This feature was a massive undertaking as a new screen, a new collection and many new features. In this project, I worked predominently on the front-end side of things, while writting my own custom endpoint and queries.',
+        style: 'text'
+      },{
+        content: 'The features I worked with are: Liking and following collections- where users can be notified if the collections they are following had been updated, and re-ordering the position of saved items. I also helped fixed UI issues after the app was rolled out to the internal testing phase. In this project, I worked with an Intern, and used the feature to help onboard and train him.',
+        style: 'text'
+      },{
+        content: 'Initially I tested out a new package to practice dragging and dropping of div elements, but due to a change in requirement, we changed it to simply reordering by button press.',
+        style: 'text'
+      },{
+        content: abvfeature4,
+        style: 'image',
+        layout: 'vertical',
+        alt: 'Liking collections',
+        caption: 'Liking collections'
+      },{
+        content: 'This is a fullstack project. The techonologies used in this feature is:',
+        style: 'text'
+      }, {
+        content: [
+          'MongoDB',
+          'React Native',
+          'Styled-Components',
+          'Redux'
+        ],
+        style: 'ul-list',
+        align: 'center'
+      }, {
+        content: 'With every project, there will be a challenge. The issues I faced in this project is:',
+        style: 'text'
+      }, {
+        content: [
+          'Working concurrently with other developers in other features.',
+          'Testing out and selecting new packages, weighing the pros and cons of each package by myself.',
+          'Dealing with last minute changes in requirements that made quite a lot of my work go down the drain.'
+        ],
+        style: 'ul-list',
+        align: 'center'
+      },{
         style: 'break'
+      },{
+        content: 'Internal Tools',
+        style: 'title'
+      },{
+        content: 'As the title mentioned, I\'ve also helped contributed to the internal platform that our company uses. The internal platform is a restricted website which interns and moderators can use to edit database without require engineering assistance.',
+        style: 'text'
+      },{
+        content: ' The platform is a simple CRUD app and my first fullstack project in the company was to build an interface where the moderating team can edit the information of our partner\'s information.',
+        style: 'text'
+      },{
+        content: 'This is a fullstack project. The techonologies used in this feature is:',
+        style: 'text'
+      },{
+        content: [
+          'MongoDB',
+          'React',
+          'Styled-Components',
+          'Redux',
+          'React google maps',
+          'React infinite scroller'
+        ],
+        style: 'ul-list',
+        align: 'center'
+      },{
+        content: 'As this was my first project in the company, my challenge was to understand the code base and technologies used and adapt to a working environment.',
+        style: 'text'
       }],
-      bootcamp: [],
-      others: []
+      bootcamp: [{
+        content: 'General Assembly',
+        style: 'title'
+      },{
+        content: 'Prior to this bootcamp, I have minimal experience with Javascript, Python, and Swift from my own reading. Over the course of three months, I was taught the basics of Software engineering. We went through HTML, CSS, Javascript, Ruby on Rails, React and Postgres',
+        style: 'text'
+      },{
+        content: 'During the three months, I had 4 major project to mark my growth and understanding as an engineer.',
+        style: 'text'
+      },{
+        content: 'Othrwrld',
+        style: 'title'
+      },{
+        content: othrwrld,
+        style: 'image',
+        caption: 'Final project',
+        layout: 'horizontal',
+        alt: 'othrwrld.herokuapp.com'
+      },{
+        content: 'Othrwrld is the Magnum Opus of my 3 month coding journey in the Software Immerssive Bootcamp. This brainchild of mine is build with Rails and love. The idea behind Othrwrld comes from my passion towards writing and fantasy. It is a fullstack CRUD web application that serves as a story planner.',
+        style: 'text'
+      },{
+        content: othrwrld1,
+        style: 'image',
+        layout: 'horizontal',
+        alt: 'othrwrld.herokuapp.com'
+      },{
+        content: 'As a writer, a lot of my complains was that I could not visualise what I want to write. Which is why a large portion of my effort went into making the CSS of the application look good.',
+        style: 'text'
+      },{
+        content: othrwrld3,
+        style: 'image',
+        layout: 'horizontal',
+        alt: 'othrwrld.herokuapp.com'
+      },{
+        content: 'Each genre contains painstakingly coded features using CSS and JS DOM! To help further visualize my ideas, I imported d3.js library to help me draw relationship graph between my ficitonal characters',
+        style: 'text'
+      },{
+        content: othrwrld2,
+        style: 'image',
+        layout: 'horizontal',
+        alt: 'othrwrld.herokuapp.com'
+      },{
+        content: 'Overall, this project was the most challenging experience as I was working with a new library, and pushing myself to the limits with designs.',
+        style: 'text'
+      },{
+        content: 'Feeling amazed? Check out the project here!',
+          href: 'https://othrwrld.herokuapp.com',
+        style: 'a',
+        align: 'center'
+      },{
+        style: 'break'
+      },{
+        style: 'title',
+        content: 'Unity'
+      },{
+        style: 'image',
+        content: unity1,
+        layout: 'horizontal',
+        alt: 'jedi-unity.herokuapp.com'
+      },{
+        content: 'Unity is a fullstack webapp that is made purely using Ruby on Rails. This project was main with 2 other partner as a part of our mandatory group project. The purpose of this app is to schedule games with friends.',
+        style: 'text'
+      },{
+        content: 'This app taught us the importance of proper git branching to ensure that conflicts does not occur. Due to the amazing and fun idea behind this project, we decided not to persue a standard boring CRUD app (even though it essentially is), but focus more on the look as well!',
+        style: 'text'
+      },{
+        content: 'Intrigued? Check out my team\'s project here!',
+        href: 'https://jedi-unity.herokuapp.com/',
+        style: 'a',
+        align: 'center'
+      },{
+        style: 'break'
+      },{
+        style: 'title',
+        content: 'ITS-META!'
+      },{
+        style: 'image',
+        content: itsmeta,
+        layout: 'horizontal',
+        alt: 'its-meta.herokuapp.com'
+      },{
+        content: 'Its-meta is a web application built with my brother to tackle the problem of education. Its-Meta was design both as a project for my Bootcamp, and a hackathon that I attended.',
+        style: 'text'
+      },{
+        style: 'image',
+        content: itsmeta1,
+        layout: 'horizontal',
+        alt: 'its-meta.herokuapp.com'
+      },{
+        content: 'During our education phase, we found ourselves often blindly studying without actually understand the purpose behind our actions. Its-meta was designed to help train children to be aware of their own thought process.',
+        style: 'text'
+      },{
+        style: 'image',
+        content: itsmeta2,
+        layout: 'horizontal',
+        alt: 'its-meta.herokuapp.com'
+      },{
+        content: 'The other aspects of Its-meta was the ability to track progress of children. Parents are able to log in to their account and check their children progress. We designed Its-meta to be free as we come from a poor and low-education family. Tution was hard to come by, and our parents were not able to guide us academically. As an environmentalist, its-meta could be expanded upon for education purposes and be used to reduce paper wastage.',
+        style: 'text'
+      },{
+        content: 'Interested? Check out my brother and my project here!',
+        href: 'https://its-meta.herokuapp.com/',
+        style: 'a',
+        align: 'center'
+      }],
+      others: [{
+        content: 'In this section, you can find various projects that I have done.',
+        style: 'text',
+        align: 'center'
+      },{
+        style: 'break'
+      },{
+        content: 'Manpower Tracking App',
+        style: 'title'
+      },{
+        content: 'Due to the nature of the work, I am unable to show any picutre',
+        style: 'caption'
+      },{
+        content: 'During my service in the Navy, I volunteered myself to code a program to keep track of the movement of personnels between outposts. As it is illegal to download any software on military computer, I had to make use of online resources to code.',
+        style: 'text'
+      },{
+        content: 'The requirement of the app is to be able to scan QR code to update movement, and being able to retreive information of the personnel with a press of button',
+        style: 'text'
+      },{
+        content: 'The code was written in Google Script, the database was stored in Google Sheets. The app was build using MIT App Inventor.',
+        style: 'text'
+      },{
+        style: 'break'
+      },{
+        content: scrollreview,
+        style: 'image',
+        layout: 'vertical',
+        alt: 'Scrolling Div'
+      },{
+        content: 'This is a simple scrolling review that I built for my company for their main Website\'s landing page using CSS, styled-components and React.',
+        style: 'text'
+      },{
+        style: 'break'
+      },{
+        content: 'Chernobyl',
+        style: 'title'
+      },{
+        content: chernobyl,
+        style: 'image',
+        layout: 'horizontal',
+        alt: 'Text based game'
+      },{
+        content: 'This is a text-based dungeon game created using html, css, and javascript. The amazing thing about this game is that it is built over 2 days, on my 5th day of learning Javascript!',
+        style: 'text'
+      }]
     }
   },
   contact: [

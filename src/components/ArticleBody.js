@@ -65,9 +65,11 @@ class ArticleBody extends Component {
               return (<div className='danger' dangerouslySetInnerHTML={this.createMarkup(constant.content)}/>)
             case 'a':
               return (
-                <a href={constant.href} target="_blank" rel="noopener noreferrer">
-                  <Text align={constant.align}>{constant.content}</Text>
-                </a>
+                <Text align={constant.align}>
+                  <Atag href={constant.href} target="_blank" rel="noopener noreferrer">
+                    {constant.content}
+                  </Atag>
+                </Text>
               )
             case 'break':
               return (<Break/>)
@@ -108,6 +110,20 @@ const Default = styled.p`
 const BackUp = styled(Default)`
   font-size: 0.9rem;
   font-style: italic;
+  :hover{
+    cursor: pointer;
+    color: #0645AD;
+  }
+`
+
+const Atag = styled.a`
+  margin: 1rem;
+  letter-spacing: -1px;
+  font-weight: lighter;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: white;
+  text-decoration: none;
   :hover{
     cursor: pointer;
     color: #0645AD;
