@@ -701,6 +701,11 @@ const constants = {
       },{
         content: 'This is a text-based dungeon game created using html, css, and javascript. The amazing thing about this game is that it is built over 2 days, on my 5th day of learning Javascript!',
         style: 'text'
+      },{
+        content: 'Check out the game here!',
+        href: '/ChernobylTxtGame1/',
+        style: 'a',
+        align: 'center'
       }]
     }
   },
