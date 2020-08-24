@@ -37,7 +37,11 @@ export default Modal
 const ModalContainer = styled.div`
   color: white;
   text-decoration: none;
-  margin-top: 20vh;
+  margin-top: calc((100vh - 396px)/2);
+
+  @media screen and (max-width: 720px) {
+    margin-top: calc((100vh - 515px)/2);
+  }
 `
 
 const LinkText = styled.a`
