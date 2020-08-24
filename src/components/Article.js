@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import '../styles/modal.css'
 import constants from '../constants/constants'
 import ArticleBody from './ArticleBody'
+import ArticleContact from './ArticleContact'
 
 
 class Article extends Component {
@@ -23,10 +24,12 @@ class Article extends Component {
   render(){
     const { article } = this.state
     const { exitArticle, topic } = this.props
-    const articleKeys = Object.keys(constants[topic].components)
-    const renderDefault = articleKeys.length !== 1
-    const scrollMore = articleKeys.length > 3
-    console.log(articleKeys)
+    let articleKeys, renderDefault, scrollMore
+    if(topic !== 'contact'){
+      articleKeys = Object.keys(constants[topic].components)
+      renderDefault = articleKeys.length !== 1
+      scrollMore = articleKeys.length > 3
+      }
     return(
       <ArticleDiv id='ArticleDiv'>
         <div>
@@ -34,22 +37,29 @@ class Article extends Component {
             <FontAwesomeIcon icon={icon.faTimes} color="white" size='lg'/>
           </CloseArticleCircle>
         </div>
-        <Body>
-          <Title>{topic}</Title>
-          {renderDefault && <ArticleNav>
-            <ArticleUl>
-              {articleKeys.length > 1 && articleKeys.map(articleKey => {
-                return (<ArticleLi onClick={() => this.selectArticle(articleKey)} key={articleKey}>{articleKey}</ArticleLi>)
-              })}
-            </ArticleUl>
-          </ArticleNav>}
-          <ArticleBody
-            article={article}
-            topic={topic}
-            renderDefault={renderDefault}
-            scrollMore={scrollMore}
-          />
-        </Body>
+
+        {topic !== 'contact' &&
+          <Body>
+            <Title>{topic}</Title>
+            {renderDefault && <ArticleNav>
+              <ArticleUl>
+                {articleKeys.length > 1 && articleKeys.map(articleKey => {
+                  return (<ArticleLi onClick={() => this.selectArticle(articleKey)} key={articleKey}>{articleKey}</ArticleLi>)
+                })}
+              </ArticleUl>
+            </ArticleNav>}
+            <ArticleBody
+              article={article}
+              topic={topic}
+              renderDefault={renderDefault}
+              scrollMore={scrollMore}
+            />
+          </Body>
+        }
+
+        {topic === 'contact' &&
+          <ArticleContact/>
+        }
       </ArticleDiv>
     )
   }

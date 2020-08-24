@@ -11,6 +11,11 @@ import abv1 from '../img/abv1.jpg'
 import te1 from '../img/te1.jpg'
 import te2 from '../img/te2.jpg'
 import te3 from '../img/te3.jpg'
+import hdb1 from '../img/hdb1.jpg'
+import hdb2 from '../img/hdb2.jpg'
+import navy1 from '../img/navy1.jpg'
+import abvfeature1 from '../img/abvfeature1.png'
+import abvfeature2 from '../img/abvfeature2.png'
 
 // title for h1
 // text for p
@@ -20,6 +25,14 @@ import te3 from '../img/te3.jpg'
 const constants = {
   about: {
     default: 'Click on one of the buttons to find out more!',
+    defaultMore: 'My name is Eden. I am a MERN Stack Software Engineer from Singapore. This section details my personal growth and educational journey. Clicking here means you must be interested in my story. Here are some keywords you can expect from this section:',
+    defaultList: [
+      'Public Speaking',
+      'Fast Learner',
+      'Passionate',
+      'Dreamer',
+      'Environment'
+    ],
     components: {
       'Who am I?': [{
         content: 'Who I am',
@@ -55,6 +68,9 @@ const constants = {
         style: 'text'
       },{
         content: 'His idea became my catalyst, and I volunteered as the sole developer of the project. I taught myself how to code, and found it to be an exciting venture. I soon took coding seriously, and upon finishing my service to the nation, I enrolled myself into a Software Engineering bootcamp at General Assembly, and upon graduation, I found work at a Vegan startup company.',
+        style: 'text'
+      },{
+        content: 'Having experience both in Private and Public sector, and two years of service in a military organization, I daresay I am a very flexible and adapatble person. My strongest characteristics are my passion and willingness to learn, and my experience proves that I am a quick study.',
         style: 'text'
       }],
       'Interest': [{
@@ -179,6 +195,14 @@ const constants = {
     }
   },
   work: {
+    default: 'Click on one of the buttons to find out more!',
+    defaultMore: 'In this section, you can find out more about all my past working experiences! Despite being a coder, I strongly believe that soft skills are neccessary as an individual. Through my working experiences, I have learnt the following:',
+    defaultList: [
+      'Independence',
+      'Responsibility',
+      'Team-player',
+      'Willingness to admit mistakes'
+    ],
     components: {
       'career': [{
         content: 'Abillionveg',
@@ -274,26 +298,190 @@ const constants = {
         content: 'As part of my internship, I had opportunites to share my ideas. My contribution to the company was researching the strategy of memory enhancement called \'The Loci Method\'. I created a card game to go along with some of the topics we shared with our clients, and it was well-recieved, and we were invited to a public school to conduct a workshop for the students and their parents. A lot of my work also involved simple film/photo editing for marketing purposes.',
         style: 'text'
       },{
+        content: 'Tools that I used in work: ',
+        style: 'caption'
+      },{
+        content: [
+          'Microsoft Excel',
+          'Microsoft Powerpoint',
+          'Windows Movie Maker'
+        ],
+        style: 'ul-list',
+        align: 'center'
+      },{
         style: 'break'
       },{
         content: 'Housing and Development Board',
         style: 'title'
+      },{
+        content: hdb2,
+        style: 'image',
+        layout: 'horizontal',
+        alt: 'Land filling'
+      },{
+        content: 'HDB is the statutory board of the Ministry of National Development responsible for public housing in Singapore',
+        style: 'caption'
+      },{
+        content: 'During my final year of education, I picekd up an internship with HDB. I was assigned to the Building and Infrastructure Group, and the project I helped out with was land reclamation of the military training island- Pulau Tekong',
+        style: 'text'
+      },{
+        content: 'Due to how big and the general secrecy of the project is, I was really surprised that it was the project I was assigned. As the have a lack of natural resources, and imported sand is expensive, in an effort to reduce cost for the project, reused excavated soil was imported from the mainland as bulk of the foundation.',
+        style: 'text'
+      },{
+        content: hdb1,
+        style: 'image',
+        layout: 'vertical',
+        alt: 'Water testing'
+      },{
+        content: 'Similar to my Final Year Project in my school, which was also with HDB, my work in the team was to help compile data of soil and water sample while capturing any hazardous action taken by subcontractors, such as leaving open pool of water for mosquito breeding, or not following safety protocols.',
+        style: 'text'
+      },{
+        content: 'Tools that I used for work:',
+        style: 'caption'
+      },{
+        content: [
+          'Microsoft Excel',
+          'Microsoft Powerpoint',
+          'Microsoft Word'
+        ],
+        style: 'ul-list',
+        align: 'center'
       }],
       'service': [{
         content: 'National Service',
         style: 'Title'
+      },{
+        content: navy1,
+        style: 'image',
+        layout: 'horizontal',
+        alt: 'Naval Military Institute',
+        caption: 'Me graduating from Naval Logistic course'
+      },{
+        content: 'My service to the nationw as a logistician in the 191 squadron HQ. The squadron operates the country\'s largest war vessel, the LST (Landing Ship Tank).',
+        style: 'text'
+      },{
+        content: 'During my training phase, I was taught a module on Supply chain management and Product life cycle.',
+        style: 'text'
+      },{
+        content: 'As a logisitician, it is my duty to account for inventory and oversea procurement of goods and items. My daily responsibilities include liasing with supplier, and ensuring items purchased are delivered on time and of correct quantity and are high quality.',
+        style: 'text'
+      },{
+        content: 'Due to my performance in my service, I was chosen to follow my unit to an oversea exercise in Australia. Following the exercise, my unit commander had an idea to implement a mobile app that helps the manpower department to keep track of the attendance and location of the fleet during oversea exercises.',
+        style: 'text'
+      },{
+        content: 'My project eventually was used in an exercise involving and tracking over 700 personnel. Due to my excellent contribution to the unit, I was award the best sailor award, and was promoted in rank.',
+        style: 'text'
+      },{
+        content: 'Tools that I used for work:',
+        style: 'caption'
+      }, {
+        content: [
+          'Gmail',
+          'Microsoft Powerpoint',
+          'Microsoft Excel',
+          'Electronic Procurement System',
+        ],
+        style: 'ul-list',
+        align: 'center'
       }]
     }
   },
   code: {
-    'Work': 'hi'
+    default: 'Click on one of the buttons to find out more!',
+    defaultMore: 'In this section, you will see a list of projects I am most proud of. Here are a list of technologies I had worked with in the past:',
+    defaultList: [
+      'Javascript ES6/',
+      'HTML/CSS',
+      'Express',
+      'NodeJS',
+      'Ruby',
+      'Ruby on Rails',
+      'React/React Native',
+      'Redux',
+      'MongoDB',
+      'Postgres',
+      'Github',
+      'Postman',
+      'Robo 3T'
+    ],
+    components: {
+      career: [{
+        content: 'Due to our startup nature, I dive into most projects with only some understanding of the technologies used. Working on the project shows my commitment to the company and my ability to grasp concepts quickly.',
+        style: 'text'
+      },{
+        content: 'Like Comments',
+        style: 'title'
+      },{
+        content: abvfeature1,
+        style: 'image',
+        alt: 'Website version',
+        caption: 'Website Function',
+        layout: 'horizontal'
+      },{
+        content: abvfeature2,
+        style: 'image',
+        alt: 'Mobile version',
+        caption: 'Mobile Function',
+        layout: 'vertical'
+      },{
+        content: 'Abillionveg is a social platform similar to facebook or instagram. Users are able to share photos of vegan dishes and products, and are able to interact with different post by commenting, sharing, and liking it. There has been a growing request from our users to be able to like comments similar to other social media platform, and I was tasked to code the feature.',
+        style: 'text'
+      },{
+        content: 'In this feature, I was the lead engineer for the mobile version, and I worked with an intern who was working on the web version. Eventually I took over both platform when the intern left.',
+        style: 'text'
+      },{
+        content: 'The feature has recently been release, but has been used over 20,000 times by our users. Due to how heavily anticiapted this feature is, it was well received by our users.',
+        style: 'text'
+      },{
+        content: 'This feature has solidified my understanding of making mongo queries, something that I did not work with prior to the project. On the desgin aspect, I worked closely with the design team to meet their requirement.',
+        style: 'text'
+      },{
+        content: 'This is a fullstack project. The techonologies used in this feature is:',
+        style: 'text'
+      },{
+        content: [
+          'MongoDB',
+          'React Native',
+          'Styled-Components',
+          'Redux'
+        ],
+        style: 'ul-list',
+        align: 'center'
+      }, {
+        content: 'With every project, there will be a challenge. The issues I faced in this project is:',
+        style: 'text'
+      }, {
+        content: [
+          'Testing edge cases and updating metadata for older comments.',
+          'Taking over code from intern after he had left the company.',
+          'Meeting designer\'s requirement perfectly.'
+        ],
+        style: 'ul-list',
+        align: 'center'
+      },{
+        style: 'break'
+      }],
+      bootcamp: [],
+      others: []
+    }
   },
-  interests: {
-    'Work': 'hi'
-  },
-  contact: {
-    'Work': 'hi'
-  }
+  contact: [
+    {
+      icon: 'icon',
+      name: 'faEnvelope',
+      href: 'mailto:lim.xin.en.eden@gmail.com'
+    },
+    {
+      icon: 'iconBrand',
+      name: 'faLinkedin',
+      href: 'https://www.linkedin.com/in/eden-lim/'
+    },
+    {
+      icon: 'iconBrand',
+      name: 'faGithub',
+      href: 'https://github.com/edenlim'
+    }
+  ]
 }
 
 export default constants

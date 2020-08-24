@@ -24,7 +24,19 @@ class ArticleBody extends Component {
       <ArticleContainer id='articleContainer'>
         {scrollMore && <Default style={{fontStyle: 'italic', fontSize: '0.9rem'}}>The navigation bar on this page can be scrolled!</Default>}
         {!article && renderDefault && (
-          <Default>{constants[topic].default}</Default>
+          <div>
+            <Default>{constants[topic].default}</Default>
+            {constants[topic].defaultMore &&
+              <Default>{constants[topic].defaultMore}</Default>
+            }
+            {constants[topic].defaultList &&
+              <UnorderedList style={{ textAlign: 'center' }}>
+              {constants[topic].defaultList.map(li => {
+                  return <li style={{ margin: '10px 0' }}>{li}</li>
+                })}
+              </UnorderedList>
+            }
+          </div>
         )}
         {article && articleComponent.map((constant) => {
           switch(constant.style.toLowerCase()){
@@ -51,6 +63,12 @@ class ArticleBody extends Component {
               )
             case 'dangerous':
               return (<div className='danger' dangerouslySetInnerHTML={this.createMarkup(constant.content)}/>)
+            case 'a':
+              return (
+                <a href={constant.href} target="_blank" rel="noopener noreferrer">
+                  <Text align={constant.align}>{constant.content}</Text>
+                </a>
+              )
             case 'break':
               return (<Break/>)
             default:
