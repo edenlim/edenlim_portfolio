@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import '../styles/modal.css'
 import constants from '../constants/constants'
 import ArticleBody from './ArticleBody'
+import ArticleContact from './ArticleContact'
 
 
 class Article extends Component {
@@ -23,31 +24,42 @@ class Article extends Component {
   render(){
     const { article } = this.state
     const { exitArticle, topic } = this.props
-    const articleKeys = Object.keys(constants[topic])
-    const renderDefault = articleKeys.length !== 1
-    console.log(articleKeys)
+    let articleKeys, renderDefault, scrollMore
+    if(topic !== 'contact'){
+      articleKeys = Object.keys(constants[topic].components)
+      renderDefault = articleKeys.length !== 1
+      scrollMore = articleKeys.length > 3
+      }
     return(
-      <ArticleDiv >
+      <ArticleDiv id='ArticleDiv'>
         <div>
           <CloseArticleCircle onClick={exitArticle}>
             <FontAwesomeIcon icon={icon.faTimes} color="white" size='lg'/>
           </CloseArticleCircle>
         </div>
-        <Body>
-          <Title>{topic}</Title>
-          {renderDefault && <ArticleNav>
-            <ArticleUl>
-              {articleKeys.length > 1 && articleKeys.map(articleKey => {
-                return (<ArticleLi onClick={() => this.selectArticle(articleKey)} key={articleKey}>{articleKey}</ArticleLi>)
-              })}
-            </ArticleUl>
-          </ArticleNav>}
-          <ArticleBody
-            article={article}
-            topic={topic}
-            renderDefault={renderDefault}
-          />
-        </Body>
+
+        {topic !== 'contact' &&
+          <Body>
+            <Title>{topic}</Title>
+            {renderDefault && <ArticleNav>
+              <ArticleUl>
+                {articleKeys.length > 1 && articleKeys.map(articleKey => {
+                  return (<ArticleLi onClick={() => this.selectArticle(articleKey)} key={articleKey}>{articleKey}</ArticleLi>)
+                })}
+              </ArticleUl>
+            </ArticleNav>}
+            <ArticleBody
+              article={article}
+              topic={topic}
+              renderDefault={renderDefault}
+              scrollMore={scrollMore}
+            />
+          </Body>
+        }
+
+        {topic === 'contact' &&
+          <ArticleContact/>
+        }
       </ArticleDiv>
     )
   }
@@ -61,7 +73,7 @@ const ArticleDiv = styled.div`
   padding: 5vh 5vw;
   background-color: rgba(0,0,0,0.5);
   border-radius: 5px;
-  margin: 10vh 0;
+  margin: 10vh auto;
 `
 
 const CloseArticleCircle = styled.div`
@@ -82,7 +94,6 @@ const CloseArticleCircle = styled.div`
 
 const Body = styled.div`
   margin-top: 2vh;
-  border: 1px solid white;
 `
 
 const Title = styled.h1`
@@ -125,7 +136,7 @@ const ArticleUl = styled.ul`
 const ArticleLi = styled.li`
   cursor: pointer;
   display: block;
-  min-width: 7.5rem;
+  min-width: 8rem;
   height: 2.75rem;
   line-height: 2.75rem;
   padding: 0 1.25rem 0 1.25rem;

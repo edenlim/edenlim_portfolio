@@ -18,38 +18,70 @@ class ArticleBody extends Component {
 
   render() {
     // Topic: article: [{}]
-    const { article, topic, renderDefault } = this.props
-    console.log('hello: ',constants[topic][article])
+    const { article, topic, renderDefault, scrollMore } = this.props
+    const articleComponent = constants[topic].components[article]
     return (
-      <ArticleContainer>
-        {!article && renderDefault && <div>Yolo</div>}
-        {article && constants[topic][article].map((constant) => {
-          switch(constant.style){
+      <ArticleContainer id='articleContainer'>
+        {scrollMore && <Default style={{fontStyle: 'italic', fontSize: '0.9rem'}}>The navigation bar on this page can be scrolled!</Default>}
+        {!article && renderDefault && (
+          <div>
+            <Default>{constants[topic].default}</Default>
+            {constants[topic].defaultMore &&
+              <Default>{constants[topic].defaultMore}</Default>
+            }
+            {constants[topic].defaultList &&
+              <UnorderedList style={{ textAlign: 'center' }}>
+              {constants[topic].defaultList.map(li => {
+                  return <li style={{ margin: '10px 0' }}>{li}</li>
+                })}
+              </UnorderedList>
+            }
+          </div>
+        )}
+        {article && articleComponent.map((constant) => {
+          switch(constant.style.toLowerCase()){
             case 'title':
               return (<Title>{constant.content}</Title>)
             case 'text':
               return (<Text align={constant.align}>{constant.content}</Text>)
+            case 'caption':
+              return (<ImageCaption style={{borderBottom: 'none', fontStyle: 'italic'}}>{constant.content}</ImageCaption>)
             case 'image':
               return (
                 <div>
-                  <Image src={constant.content} alt={constant.alt} />
+                  <Image src={constant.content} alt={constant.alt} layout={constant.layout} />
                   {constant.caption && <ImageCaption>{constant.caption}</ImageCaption>}
                 </div>
               )
             case 'ul-list':
               return (
-                <UnorderedList>
+                <UnorderedList style={{ textAlign: constant.align ? constant.align : 'left' }}>
                   {constant.content.map(li => {
-                    return <li>{li}</li>
+                    return <li style={{margin: '10px 0'}}>{li}</li>
                   })}
                 </UnorderedList>
               )
             case 'dangerous':
               return (<div className='danger' dangerouslySetInnerHTML={this.createMarkup(constant.content)}/>)
+            case 'a':
+              return (
+                <Text align={constant.align}>
+                  <Atag href={constant.href} target="_blank" rel="noopener noreferrer">
+                    {constant.content}
+                  </Atag>
+                </Text>
+              )
+            case 'break':
+              return (<Break/>)
             default:
               return (<div className='danger' dangerouslySetInnerHTML={this.createMarkup(constant.content)}/>)
           }
         })}
+        {article && <BackUp onClick={() => {
+          document.getElementById('Home').scrollIntoView({behavior: 'smooth'})
+        }}>
+          Back up
+        </BackUp>}
       </ArticleContainer>
     )
   }
@@ -60,6 +92,42 @@ export default ArticleBody
 const ArticleContainer = styled.div`
   margin: 25px 0;
   color: white;
+`
+
+const Break = styled.div`
+  width: 100%;
+  margin: 2rem 0;
+  border-top: 1px dotted white;
+`
+
+const Default = styled.p`
+  margin: 1rem;
+  letter-spacing: -1px;
+  font-weight: lighter;
+  font-size: 1.15rem;
+`
+
+const BackUp = styled(Default)`
+  font-size: 0.9rem;
+  font-style: italic;
+  :hover{
+    cursor: pointer;
+    color: #0645AD;
+  }
+`
+
+const Atag = styled.a`
+  margin: 1rem;
+  letter-spacing: -1px;
+  font-weight: lighter;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: white;
+  text-decoration: none;
+  :hover{
+    cursor: pointer;
+    color: #0645AD;
+  }
 `
 
 const Title = styled.h1`
@@ -73,16 +141,12 @@ const Title = styled.h1`
   letter-spacing: 0.2rem;
 `
 
-const Text = styled.p`
-  margin: 1rem;
-  letter-spacing: -1px;
-  font-weight: lighter;
+const Text = styled(Default)`
   text-align: ${ props => props.align ? props.align : 'left'};
-  font-size: 1.15rem;
 `
 
 const Image = styled.img`
-  width: 65%;
+  width: ${ props => props.layout === 'vertical' ? '40%' : '65%'};
 `
 
 const ImageCaption = styled.p`
