@@ -11,18 +11,21 @@ const ArticleContact = () => {
     <ArticleContainer>
       <Title>Contact Me!</Title>
 
-      {constants.contact.map(platform => (
-        <a href={platform.href} target='_blank' rel="noopener noreferrer">
-          <Circle>
-          {platform.icon === 'icon' && (
-            <FontAwesomeIcon icon={icon[platform.name]} color="white" size='lg' />
-          )}
-          {platform.icon === 'iconBrand' && (
-            <FontAwesomeIcon icon={iconBrand[platform.name]} color="white" size='lg' />
-          )}
-          </Circle>
-        </a>
-      ))}
+      <ContactDiv>
+        {constants.contact.map(platform => (
+          <a href={platform.href} target='_blank' rel="noopener noreferrer">
+            <Circle>
+              {platform.icon === 'icon' && (
+                <FontAwesomeIcon icon={icon[platform.name]} color="white" size='lg' />
+              )}
+              {platform.icon === 'iconBrand' && (
+                <FontAwesomeIcon icon={iconBrand[platform.name]} color="white" size='lg' />
+              )}
+            </Circle>
+          </a>
+        ))}
+      </ContactDiv>
+
     </ArticleContainer>
   )
 }
@@ -33,8 +36,8 @@ const ArticleContainer = styled.div`
   width: 40%;
   margin: 25px auto;
   color: white;
-  display: flex;
-  justify-content: space-around;
+  // display: flex;
+  // justify-content: space-around;
 `
 const Circle = styled.div`
  display: flex;
@@ -52,11 +55,16 @@ transition: background-color 0.3s ease;
 
 const Title = styled.h1`
   border-bottom: 1px solid white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   font-weight: bold;
   display: inline-block;
   padding: 0 1rem 0.7rem;
   margin: 2rem auto;
   letter-spacing: 0.2rem;
+`
+
+const ContactDiv = styled.div`
+  display: flex;
+  justify-content: space-around;
 `

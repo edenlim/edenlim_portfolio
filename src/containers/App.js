@@ -122,7 +122,7 @@ const AppContainer = styled.div`
 
 const Overlay = styled.div`
   height: 100%;
-  width: 100%;
+  width: 100vw;
   position: absolute;
   z-index: 1;
   background-color: rgba(0,0,0,1);
